@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: #e8eaf6;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252530;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a4a;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm
+           transition-all duration-150 cursor-pointer select-none disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-hover active:scale-95 shadow-glow-sm hover:shadow-glow-accent;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-text-secondary border border-border hover:border-accent/50
+           hover:text-text-primary hover:bg-bg-elevated active:scale-95;
+  }
+
+  .btn-danger {
+    @apply btn bg-transparent text-red-400 border border-red-400/30 hover:bg-red-400/10
+           hover:border-red-400/60 active:scale-95;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 bg-bg-elevated border border-border rounded-lg text-sm text-text-primary
+           placeholder:text-text-muted focus:outline-none focus:border-accent/70 focus:ring-1 focus:ring-accent/30
+           transition-colors duration-150;
+  }
+
+  .textarea {
+    @apply input resize-none;
+  }
+
+  .select {
+    @apply input appearance-none cursor-pointer;
+  }
+
+  .card {
+    @apply bg-bg-card border border-border rounded-xl shadow-card;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-text-secondary mb-1.5 uppercase tracking-wider;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+}

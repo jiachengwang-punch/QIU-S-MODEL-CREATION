@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Database & generated files
+backend/storage/studio.db
+backend/storage/assets/
+backend/storage/thumbnails/
+backend/storage/uploads/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+*.env.local
